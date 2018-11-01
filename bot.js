@@ -35,4 +35,23 @@ client.on('message', message => {
   } else 
   if (message.content.startsWith(adminprefix + 'lis')) {
   client.user.setActivity(argresult , {type:'LISTENING'});
-      message.channel.send(`**N
+      message.channel.send(`**Now Listening   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'stream')) {
+    client.user.setGame(argresult, "https://www.twitch.tv/vult");
+      message.channel.send(`**Now Streaming   ${argresult}**`)
+  }
+  if (message.content.startsWith(adminprefix + 'setname')) {
+  client.user.setUsername(argresult).then
+      message.channel.send(`Changing The Name To ..**${argresult}** `)
+} else
+if (message.content.startsWith(adminprefix + 'setavatar')) {
+  client.user.setAvatar(argresult);
+    message.channel.send(`Changing The Avatar To :**${argresult}** `);
+}
+});
+
+
+
+
+client.login(process.env.BOT_TOKEN);
