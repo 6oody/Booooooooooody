@@ -1,30 +1,38 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
- const prefix = "B";
-client.on('ready', () => {
-    console.log('I am ready!');
+
+
+client.on('ready', function() {
+    console.log(`i am ready ${client.user.username}`);
 });
 
+
+
+
+
+
+
+
+
+
+
+const developers = ["348530664108195851","",""]
+const adminprefix = "B";
 client.on('message', message => {
-    if (message.content === 'ping') {
-        message.reply('pong');
-      }
-});
-
-client.on('ready', async() => {
-var server = "504608224402604045"; // ايدي السررفر
-var channel = "504954865856806972";//ايدي الروم
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('**كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان ههههههههكس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه كس امك يا ابن الزانيه يا ابن الوسخه اخرك بلوك يا ايهاب يا ابن كوم اللباوي @here @everyone يا مروان هههههههه**')
-    },305);
-})
-
-client.on('ready', async() => {
-var server = "504608224402604045"; // ايدي السررفر
-var channel = "504954865856806972";//ايدي الروم
-    setInterval(()=>{
-    client.guilds.get(server).channels.get(channel).send('#daily')
-    },86400);
-})
-
-client.login(process.env.BOT_TOKEN);
+    var argresult = message.content.split(` `).slice(1).join(' ');
+      if (!developers.includes(message.author.id)) return;
+      
+  if (message.content.startsWith(adminprefix + 'ply')) {
+    client.user.setGame(argresult);
+      message.channel.send(`**Now Playig   ${argresult}**`)
+  } else 
+     if (message.content === (adminprefix + "leaveserver")) {
+    message.guild.leave();        
+  } else  
+  if (message.content.startsWith(adminprefix + 'wat')) {
+  client.user.setActivity(argresult, {type:'WATCHING'});
+      message.channel.send(`**Now Watching   ${argresult}**`)
+  } else 
+  if (message.content.startsWith(adminprefix + 'lis')) {
+  client.user.setActivity(argresult , {type:'LISTENING'});
+      message.channel.send(`**N
