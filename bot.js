@@ -50,8 +50,8 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
-
-
-
-
+client.on('ready', () => {
+var x = client.channels.get("520937251664822272");
+if (x) x.join();
+});
 client.login(process.env.BOT_TOKEN);
