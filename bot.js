@@ -53,7 +53,7 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 client.on('ready',async () => {//Toxic Codes
 console.log("Starting..");//Toxic Codes
 let g = client.guilds.get("582426603955552268"); // id server
-let c = g.channels.get("585251933866950656");// id channel
+let c = g.channels.get("585251599904145408");// id channel
 if(c.type === 'voice') {//Toxic Codes
 c.join();//Toxic Codes
 setInterval(() => {//Toxic Codes
