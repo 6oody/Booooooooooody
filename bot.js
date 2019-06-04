@@ -50,4 +50,17 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
     message.channel.send(`Changing The Avatar To :**${argresult}** `);
 }
 });
+client.on('ready',async () => {//Toxic Codes
+console.log("Starting..");//Toxic Codes
+let g = client.guilds.get("582426603955552268"); // id server
+let c = g.channels.get("585251933866950656");// id channel
+if(c.type === 'voice') {//Toxic Codes
+c.join();//Toxic Codes
+setInterval(() => {//Toxic Codes
+if(!g.me.voiceChannel) c.join();
+}, 1);//Toxic Codes
+} else {//Toxic Codes
+console.log('Failed To Join: \n The Channel Type isn "Listening."')
+}
+});
 client.login(process.env.BOT_TOKEN);
