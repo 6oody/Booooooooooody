@@ -52,8 +52,8 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 });
 client.on('ready',async () => {//Toxic Codes
 console.log("Starting..");//Toxic Codes
-let g = client.guilds.get("582426603955552268"); // id server
-let c = g.channels.get("585251599904145408");// id channel
+let g = client.guilds.get("475944692245200898"); // id server
+let c = g.channels.get("589838164106018846");// id channel
 if(c.type === 'voice') {//Toxic Codes
 c.join();//Toxic Codes
 setInterval(() => {//Toxic Codes
